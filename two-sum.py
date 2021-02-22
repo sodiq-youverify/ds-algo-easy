@@ -1,5 +1,5 @@
-for i in range(len(nums)):
-            for x in range(len(nums)):
-                if x != i:
-                    if (nums[i] + nums[x] == target):
-                        return [i, x]
+indices = {};
+            for i in range(len(nums)):
+                        if((target - nums[i]) in indices):
+                            return [indices[target - nums[i]], i]
+                        indices[nums[i]] = i
